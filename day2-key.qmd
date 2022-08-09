@@ -6,3 +6,180 @@ excute:
   warning: false
   message: false
 ---
+# Downloads/ Library
+
+```{r}
+library(tidyverse)
+```
+
+# Vectors
+
+```{r}
+# Create a vector
+dogs <- c("teddy", "khora", "waffle", "banjo", "tallie")
+
+# Check the class
+class(dogs)
+```
+
+```{r}
+cats <- c("creamsicle wolf", 14.2, 3L)
+class(cats)
+typeof(cats)
+```
+
+```{r}
+years <- c(20, 40, 16, 2)
+class(years)
+typeof(years)
+```
+
+```{r}
+# Want to do a conditional check
+# is. <<<< asks questiuons "is this THIS"
+# as. <<<< gives a command "make this THIS"
+
+is.numeric(years)
+is.character(years)
+```
+
+```{r}
+dog_food <- c(teddy = "purina", khora = "alpo", waffle = "fancy feast")
+dog_food
+
+dog_food[2]
+dog_food["khora"]
+```
+
+```{r}
+cars <- c("blue", "orange", "white")
+cars[2]
+i <- 3
+
+cars[3]
+          
+```
+
+```{r}
+cars[3] <- "yellow"
+
+cars
+```
+
+# Matrices
+
+```{r}
+
+vect_1 <- c(12, 14, 18, 20)
+vect_2 <- c(-15, -10, -5, 0)
+fish_size <- matrix(vect_1, ncol = 4, nrow = 4, byrow = TRUE)
+
+fish_size
+
+# Example indexing:
+
+fish_size[1,1]
+fish_size[1,]
+
+typeof(fish_size)
+```
+
+```{r}
+# What happens if we create a matrix with different type of data?
+
+fish_type <- matrix(c(12, "Traut",18, 13L), ncol = 2, nrow = 2, byrow = TRUE)
+
+fish_type
+class(fish_type)
+typeof(fish_type)
+
+
+fish_size[2,]
+fish_size[,1]
+```
+
+# Lists
+
+Reminder: A list combines vectors that can be of different length and type
+
+```{r}
+urchins <- list("blue", c(1,2,3), c("a cat", "a dog"), 5L)
+urchins
+class(urchins)
+typeof(urchins)
+
+
+ex_1 <- urchins[3]
+ex_2 <- urchins[[3]]
+
+ex_1[1]
+ex_2[1]
+
+```
+
+### Make a named list
+
+```{r}
+tacos <- list(topping = c("onion", "cilantro", "guacamole"),
+              filling = c("beans", "meat", "veggies"),
+              price = c(6.75, 8.25, 9.50))
+tacos 
+
+#Index list elements by name
+tacos$filling[2]
+tacos[2]
+
+```
+
+The price of a veggie burrito with guacamole is \$9.50
+
+```{r}
+my_list <- list(cats = c(1,2,3), dogs = c(10,11,12))
+
+```
+
+The second value of dogs is `r my_list$dogs[2]`\`\
+
+
+# Data Frames
+
+```{r}
+topping <- c("opnion", "cilantro", "guacamole")
+filling <- c("beans", "meat", "veggie")
+price <- c(6.72, 8.25, 9.50)
+
+
+df_ex_1 <- data.frame(topping, filling, price)
+df_ex_1
+class(df_ex_1)
+typeof(df_ex_1)
+
+df_ex_2 <- data.frame(topping = c("sour cream", "salsa", "cheese"),
+                      filling = c("chicken", "cheeese", "cabbage"),
+                      price = c(12.50, 13.75, 15))
+#Using a specific format called tribble from the tidyverse library 
+# the ~ will make the header names
+df_ex_3 <- tribble(
+  ~topping, ~filling, ~price,
+  "avocado", "steak", 13.25,
+  "radish", "fish", 10.40,
+  "salsa", "veggie", 9.75 
+)
+
+class(df_ex_3)
+df_ex_3
+
+df_ex_3$price[3]
+df_ex_3[3,3]
+
+```
+
+
+
+# Indexing
+
+```{r}
+
+
+```
+
