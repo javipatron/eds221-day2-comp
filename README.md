@@ -1,1 +1,4 @@
-# eds221-day2-comp
+# EDS 221 - DAY 2 Computational Session
+
+- Creating data structures
+- Exploring 
